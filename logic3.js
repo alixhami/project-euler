@@ -12,26 +12,26 @@ is correct but will crash the browser when 600851475143 is entered.
 
 function isPrime(n) {
   if (n<2) return false;
-	for(var i=2; i < n; i++) {
-  	if (n%i === 0) {
-    	return false;
+  for(var i=2; i < n; i++) {
+    if (n%i === 0) {
+      return false;
     }
   }
- 	return true;
+  return true;
 }
 
 function findLargestPrime(n) {
-	var nFactors = [];
-	for(var i=0;i <= n/2;i++) {
+  var nFactors = [];
+  for(var i=0;i <= n/2;i++) {
     if(n%i === 0) {
-    	nFactors[nFactors.length] = i;
+      nFactors[nFactors.length] = i;
     }
   }
   var largestPrimeFactor = 0;
   for (factor in nFactors) {
-  	if (isPrime(nFactors[factor])) {
-    	if (nFactors[factor] > largestPrimeFactor) {
-      	largestPrimeFactor = nFactors[factor];
+    if (isPrime(nFactors[factor])) {
+      if (nFactors[factor] > largestPrimeFactor) {
+        largestPrimeFactor = nFactors[factor];
       }
     }
   }
